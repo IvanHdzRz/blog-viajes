@@ -7,4 +7,132 @@
 }
 body{
     font-family: 'Lato', sans-serif;
+    overflow-x: hidden;
+    margin: 0;
+    color:var(--Gray);
+}
+.navigation{
+    position: fixed;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    
+}
+.nav-links{
+    display: flex;
+    flex-direction: row;
+}
+.nav-links li {
+    list-style: none;
+    text-decoration: none;
+    padding: .5rem;
+}
+.nav-links li:last-child{
+    padding-right: 2rem;
+}
+.nav-links>li>a{
+    text-decoration: none;
+    color:var(--LightGray);
+    border-bottom: 3px solid transparent;
+    padding-bottom: .5rem;
+}
+.nav-links>li>a:hover{
+    border-bottom: 3px solid var(--SilverBrown);
+}
+.home-logo{
+    justify-self: flex-start !important;
+}
+.home-logo>img{
+    height: 40px;
+    
+}
+.hero{
+    width: 100vw;
+    background-image: url('../static/img/hero-bg.jpg');
+    background-size: cover;
+    height: 30rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.hero .quote{
+    color:var(--LightGray);
+    padding-left:1rem;
+}
+.hero>.quote>h1{
+    text-transform: uppercase;
+}
+.hero>.quote>p{
+    margin-bottom: 5rem;
+}
+
+.lastest-post{
+    background-color: var(--White);
+    padding-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    box-sizing: border-box;
+}
+.post{
+    max-width: 80vw;
+    display: grid;
+    grid-template-columns: 350px auto;
+    height: 100%;
+
+}
+.post>img{
+    width:350px;
+    height: 350px;
+    object-fit: cover;
+    grid-row: 1/4;
+    grid-column: 1/2;
+}
+.post-wraper{
+    padding: 1rem 3rem;
+    height: 350px;
+    display: grid;
+    grid-template-rows: repeat(4,auto);
+    grid-template-areas: 
+    'info'
+    'title'
+    'extract'
+    'link'
+    ;
+}
+.post-title{
+    grid-area: title;
+    text-transform: uppercase;
+    font-size: 2rem;
+    font-weight: 400;
+}
+.post-extract{
+    grid-area: extract;
+}
+.post-link{
+    grid-area: link;
+    justify-self: flex-start;
+    align-self: flex-start;
+}
+.post-info{
+    grid-area: info;
+    
+}   
+.post-info>span{
+    padding-right: 1rem;
+}
+
+.btn{
+    padding: .5rem 3rem;
+    background-color: var(--Gray);
+    text-decoration: none;
+    color: var(--white);
+    text-transform: uppercase;
+}
+.primary{
+    background-color: var(--SilverBrown);
+    font-weight: 700;
+    color: var(--LightGray);
 }
