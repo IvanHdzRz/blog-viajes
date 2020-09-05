@@ -11,6 +11,7 @@ body{
     margin: 0;
     color:var(--Gray);
 }
+/*ESTILOS DE BARRA DE NAVEGACION*/
 .navigation{
     position: fixed;
     width: 100vw;
@@ -47,9 +48,10 @@ body{
     height: 40px;
     
 }
+/*ESTILOS DEL HERO*/
 .hero{
     width: 100vw;
-    background-image: url('../static/img/hero-bg.jpg');
+    background-image: url('../static/img/hero.jpg');
     background-size: cover;
     height: 30rem;
     display: flex;
@@ -62,11 +64,12 @@ body{
 }
 .hero>.quote>h1{
     text-transform: uppercase;
+    font-weight: 300;
 }
 .hero>.quote>p{
     margin-bottom: 5rem;
 }
-
+/*ESTILOS DEL CONTENEDOR DE POST*/
 .lastest-post{
     background-color: var(--White);
     padding-top: 5rem;
@@ -76,23 +79,22 @@ body{
     align-items: center;
     box-sizing: border-box;
 }
+/*ESTILOS DE POST*/
 .post{
-    max-width: 80vw;
-    display: grid;
-    grid-template-columns: 350px auto;
-    height: 100%;
-
+    width: 75vw;
+    font-size: 1.5rem;
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 10rem;
 }
+
 .post>img{
-    width:350px;
-    height: 350px;
+    width: 18em;
+    height: 18em;
     object-fit: cover;
-    grid-row: 1/4;
-    grid-column: 1/2;
 }
 .post-wraper{
-    padding: 1rem 3rem;
-    height: 350px;
     display: grid;
     grid-template-rows: repeat(4,auto);
     grid-template-areas: 
@@ -102,37 +104,74 @@ body{
     'link'
     ;
 }
+
+.post-extract, .post-info{
+    font-size: .8em;
+}
 .post-title{
-    grid-area: title;
+    font-size: 1.65em;
     text-transform: uppercase;
-    font-size: 2rem;
     font-weight: 400;
+    grid-area: title;
+    margin-bottom: 0;
 }
 .post-extract{
     grid-area: extract;
+}
+.post-info{
+    grid-area: info;
 }
 .post-link{
     grid-area: link;
     justify-self: flex-start;
     align-self: flex-start;
-}
-.post-info{
-    grid-area: info;
-    
-}   
-.post-info>span{
-    padding-right: 1rem;
-}
+    font-size: .7em;
 
+}
+.post-info>span{
+    padding-right: 2em;
+}
 .btn{
     padding: .5rem 3rem;
     background-color: var(--Gray);
+    color:white;
     text-decoration: none;
-    color: var(--white);
     text-transform: uppercase;
+    font-weight: 700;
 }
 .primary{
     background-color: var(--SilverBrown);
-    font-weight: 700;
-    color: var(--LightGray);
+}
+
+@media only screen and (max-width: 1200px){
+    .post{
+        width: 90vw;
+        font-size: 1.4rem;
+    }
+}
+
+@media only screen and (max-width: 1000px){
+    .post{
+        width: 90vw;
+        font-size: 1.2rem;
+    }
+}
+
+@media only screen and (max-width: 800px){
+    .post{
+        width: 95vw;
+        font-size: 1.1rem;
+    }
+}
+
+@media only screen and (max-width: 600px){
+    .post{
+        max-width: 95vw;
+        grid-template-rows: auto auto;
+        grid-template-columns: auto;
+    }
+    .post>img{
+        width: 95vw;
+    }
+    
 }
