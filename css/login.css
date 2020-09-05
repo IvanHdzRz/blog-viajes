@@ -1,0 +1,71 @@
+.login{
+    min-width: 100vw;
+    min-height: 100vh;
+    overflow-x: hidden;
+    margin: 0;
+   
+    font-family: 'Lato', sans-serif;
+    background-image: url('../static/img/login-bg.jpg');
+    position: relative;
+}
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position:absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    backdrop-filter: blur(10px);
+
+}
+.login-form{
+    max-width: 95vw;
+    width:800px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem;
+    background-color: white;
+    box-sizing: border-box;
+}
+.input-text::placeholder{
+    text-transform: uppercase;
+}
+.login-form>h1{
+    font-weight: 300;
+}
+
+.input-text{
+    padding: .5rem;
+    font-size: 1.3rem;
+    margin: 1rem;
+    border:none;
+    border-bottom: 2px solid #eeeeee;
+}
+.sign-up{
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 2rem;
+}
+.sign-up>a{
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.btn{
+    padding: .5rem 3rem;
+    background-color: var(--Gray);
+    color:white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    border: none;
+    margin-bottom: 3rem;
+}
+.primary{
+    background-color: #d3c2a9;
+}
