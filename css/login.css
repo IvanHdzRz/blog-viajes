@@ -75,4 +75,10 @@ main{
 
 .redirect-signup-sign-in{
     color:var(--Gray);
+    transition: all .3s;
+}
+.redirect-signup-sign-in:hover{
+    color:black;
+    font-weight: 400;
+    text-decoration-line: underline;
 }
