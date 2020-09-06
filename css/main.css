@@ -13,7 +13,8 @@ body{
 }
 /*ESTILOS DE BARRA DE NAVEGACION*/
 .navigation-colored{
-    background-color: rgba(0,0,0,.8);
+    background-color: rgba(0,0,0,1);
+    
 }
 .navigation{
     position: fixed;
@@ -22,7 +23,7 @@ body{
     flex-direction: row;
     justify-content: space-between;
     z-index: 10;
-    transition: all .3s;
+    transition: all .5s;
 }
 .nav-links{
     display: flex;
@@ -41,9 +42,12 @@ body{
     color:var(--LightGray);
     border-bottom: 3px solid transparent;
     padding-bottom: .5rem;
+    text-transform:uppercase;
+    transition: all .5s;
 }
 .nav-links>li>a:hover{
     border-bottom: 3px solid var(--SilverBrown);
+    color:white;
 }
 .home-logo{
     

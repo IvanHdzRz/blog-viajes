@@ -1,3 +1,6 @@
+:root{
+    --Gray:#454545
+}
 .login{
     min-width: 100vw;
     min-height: 100vh;
@@ -68,4 +71,8 @@ main{
 }
 .primary{
     background-color: #d3c2a9;
+}
+
+.redirect-signup-sign-in{
+    color:var(--Gray);
 }
