@@ -12,6 +12,9 @@ body{
     color:var(--Gray);
 }
 /*ESTILOS DE BARRA DE NAVEGACION*/
+.navigation-colored{
+    background-color: rgba(0,0,0,.8);
+}
 .navigation{
     position: fixed;
     width: 100vw;
@@ -19,6 +22,7 @@ body{
     flex-direction: row;
     justify-content: space-between;
     z-index: 10;
+    transition: all .3s;
 }
 .nav-links{
     display: flex;
