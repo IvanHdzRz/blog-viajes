@@ -37,7 +37,7 @@ body{
 .nav-links li:last-child{
     padding-right: 2rem;
 }
-.nav-links>li>a{
+.Link{
     text-decoration: none;
     color:var(--LightGray);
     border-bottom: 3px solid transparent;
@@ -45,10 +45,15 @@ body{
     text-transform:uppercase;
     transition: all .5s;
 }
-.nav-links>li>a:hover{
+.activeLink{
+    border-bottom: 3px solid var(--SilverBrown);
+    
+}
+.Link:hover{
     border-bottom: 3px solid var(--SilverBrown);
     color:white;
 }
+
 .home-logo{
     
     align-self: center;

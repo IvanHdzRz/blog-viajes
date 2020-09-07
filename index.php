@@ -1,32 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./css/main.css">
-    <title>Blog viajes</title>
-</head>
-<body>
-    <nav id='navigation' class="navigation">
-        <div class="home-logo">
-            <img src='./static/img/logo.png' alt='logo' />
-        </div>
-        <ul class="nav-links">
-            <li><a href="">Home </a></li>
-            <li> <a href="">about us </a></li>
-            <li> <a href="login.html">login </a> </li>
-            <li> <a href="signup.html">sign up </a></li>
-            
-        </ul>
-    </nav>
-    <div class="hero">
-        <div class="quote">
-            <h1>Share your experiences</h1>
-            <p>frase que resume de manera elegante que se trata de un blog de viajes</p>
-            <a href="" class="btn primary">crea un post</a>
-        </div>
-    </div>
+
+    <?php 
+        require_once './includes/header.php';
+        $activePage='home';
+        require_once './includes/navigation.php';
+        require_once './includes/hero.php';
+    ?>
     <main>
         <div class="lastest-post">
             <div class="post">
