@@ -1,23 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Document</title>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./css/login.css">
-</head>
-<body class="login">
-    <main>
-        <form class="login-form">
+<?php 
+    include_once './includes/header.php';
+    $activePage='sign up';
+    $darkNav=true;
+    include_once './includes/navigation.php';
+?>
+<div class="login">
+    <div class='container'>
+        <form class="login-form" action='methods/register.php' method="POST">
             <h1>Sign up</h1>
             <p>
                 we are excited about everything you have to share
             </p>
-            <input type="text" placeholder="user name" class="input-text"/>
+            <input type="text" placeholder="user name" name='user_name' class="input-text"/>
+            <input type="email" placeholder="email" name='email' class="input-text"/>
             <input type='password' placeholder="password" name='password' class="input-text"/>
-            <input type='password' placeholder="confirm your password" name='confirm-password'  class="input-text"/>
+            <input type='password' placeholder="confirm your password" name='confirm_password'  class="input-text"/>
             <div class="sign-up">
                 <a href="login.html" class='redirect-signup-sign-in'>
                     I already have an account
@@ -26,6 +23,6 @@
             </div>
             
         </form>
-    </main>
-</body>
+</div>
+</div>
 </html>

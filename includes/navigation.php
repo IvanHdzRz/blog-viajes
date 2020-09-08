@@ -5,10 +5,16 @@
         ['name'=>'sign up', 'link'=>'signup.php' ],
         ['name'=>'about us', 'link'=>'index.php' ]
     );
-
+    if(isset($darkNav)){
+        $classNav=$darkNav?'navigation navigation-colored':'navigation';
+        
+    }else{
+        $classNav='navigation';
+    }
 ?>
 <body>
-    <nav id='navigation' class="navigation">
+    
+    <nav id='navigation' class="<?php echo $classNav?>">
         <div class="home-logo">
             <img src='./static/img/logo.png' alt='logo' />
         </div>

@@ -62,7 +62,9 @@ body{
     height: 40px;
     
 }
-
+main{
+    position: static !important;
+}
 /*ESTILOS DEL HERO*/
 .hero{
     width: 100vw;
@@ -93,7 +95,9 @@ body{
     margin-bottom: 5rem;
 }
 /*ESTILOS DEL CONTENEDOR DE POST*/
+
 .lastest-post{
+    position: static;
     background-color: var(--White);
     padding-top: 5rem;
     display: flex;

@@ -6,12 +6,12 @@
     min-height: 100vh;
     overflow-x: hidden;
     margin: 0;
-   
     font-family: 'Lato', sans-serif;
     background-image: url('../static/img/login-bg.jpg');
     position: relative;
+    
 }
-main{
+.container{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -24,6 +24,7 @@ main{
 
 }
 .login-form{
+    
     max-width: 95vw;
     width:800px;
     display: flex;
