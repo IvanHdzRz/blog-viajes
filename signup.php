@@ -3,7 +3,10 @@
     $activePage='sign up';
     $darkNav=true;
     include_once './includes/navigation.php';
+    session_start();
+    var_dump($_SESSION['signup-errors']);
 ?>
+
 <div class="login">
     <div class='container'>
         <form class="login-form" action='methods/register.php' method="POST">
@@ -23,6 +26,10 @@
             </div>
             
         </form>
+        <?php 
+            //se restablece el array de errores
+            $_SESSION['signup-errors']=null;
+        ?>
 </div>
 </div>
 </html>

@@ -13,7 +13,9 @@
 
     */
     include '../helpers/ValidateNewUserData.php';
+    include '../helpers/DBConector.php';
 
+    session_start();
     //validar que lleguen datos atravez de POST
     $isEmpty=!(validateEmptyData($_POST));
     //si esta vacio redirigir a pagina de registro
@@ -31,6 +33,25 @@
 
     //valida todos datos recibidos
     $errors=validateFormatData($newUserData);
-    var_dump($errors);
+    //cuenta cuantos errores hubo
+    $errorsCount=0;
+    foreach($errors as $error){
+        $errorsCount+=count($error);
+    }
+    //si hubo errores se crea una variable de sesion con los errores y se redirige hacia el form de registro
+    
+
+    if($errorsCount>0){
+        $_SESSION['signup-errors']=$errors;
+        header("Location: ../signup.php");
+    }
+    //si no se valida los el user y el email en la base de datos para verificar que no este registrado un usuario con esos datos
+    if($_SESSION['dbconnection_status']==='ok'){
+        $getCategories=mysqli_query($connection,'SELECT * FROM categorias');
+        
+        while($cat=mysqli_fetch_assoc($getCategories)){
+            var_dump($cat);
+        }
+    }
     
     ?>
