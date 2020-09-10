@@ -25,10 +25,10 @@
 
     //si llegan datos crea array
     $newUserData=[
-        'username'=>$_POST['user_name'],
-        'email'=>$_POST['email'],
-        'password'=>$_POST['password'],
-        'password_confirm'=>$_POST['confirm_password'],
+        'username'=>trim($_POST['user_name']),
+        'email'=>trim($_POST['email']),
+        'password'=>trim($_POST['password']),
+        'password_confirm'=>trim($_POST['confirm_password']),
     ];
 
     //valida todos datos recibidos
@@ -46,12 +46,25 @@
         header("Location: ../signup.php");
     }
     //si no se valida los el user y el email en la base de datos para verificar que no este registrado un usuario con esos datos
+    
     if($_SESSION['dbconnection_status']==='ok'){
-        $getCategories=mysqli_query($connection,'SELECT * FROM categorias');
+        include '../helpers/querys.php';
+
+        $queryVerifyUserName="SELECT * FROM usuarios WHERE user_name=".'"'.$newUserData['username'].'"';
         
-        while($cat=mysqli_fetch_assoc($getCategories)){
-            var_dump($cat);
+        $queryVerifyEmail='SELECT * FROM usuarios WHERE email='.$newUserData['email'];
+        
+        $sucessInsertUser=insertNewUser($connection,$newUserData);
+        
+        if($sucessInsertUser){
+            echo 'usuario insertado';
+        }else{
+            echo 'no se pudo joven';
         }
+        
+    }else{
+        //redirigir a una pagina de error para intentarlo mas tarde 
+        //o redirigir al formulario de registro indicando que un error ocurrio
     }
     
     ?>
