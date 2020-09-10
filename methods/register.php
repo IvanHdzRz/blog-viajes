@@ -14,13 +14,14 @@
     */
     include '../helpers/ValidateNewUserData.php';
 
-
+    //validar que lleguen datos atravez de POST
     $isEmpty=!(validateEmptyData($_POST));
     //si esta vacio redirigir a pagina de registro
     if($isEmpty){
         header("Location: ../signup.php");
     }
 
+    //si llegan datos crea array
     $newUserData=[
         'username'=>$_POST['user_name'],
         'email'=>$_POST['email'],
@@ -28,14 +29,8 @@
         'password_confirm'=>$_POST['confirm_password'],
     ];
 
+    //valida todos datos recibidos
     $errors=validateFormatData($newUserData);
-    var_dump( $errors['email']);
-    /*
-    $user_name=$_POST['user_name'];
-    $email=$_POST['email'];
-    $password=$_POST['password'];
-    $password_confirm=$_POST['confirm_password'];
-
-    echo $user_name.' '.$email.' '.$password.' '.$password_confirm;
-    */
+    var_dump($errors);
+    
     ?>
