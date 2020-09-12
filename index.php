@@ -1,12 +1,13 @@
 
     <?php 
+        if(!isset($_SESSION)){
+            session_start();
+        }
         require_once './includes/header.php';
         $activePage='home';
         require_once './includes/navigation.php';
         require_once './includes/hero.php';
-        if(!isset($_SESSION)){
-            session_start();
-        }
+        
     ?>
     <main>
         <div class="lastest-post">

@@ -6,7 +6,7 @@
     );
 
     //si esta logeando el usuario entonces solo muestra la opcion para cerrar sesion
-    var_dump(isset($_SESSION['login-status']));
+    
     if(isset($_SESSION['login-status'])){
         if($_SESSION['login-status']==='authenticated'){
             array_push($sections,['name'=>'logout','link'=>'checkSession.php']);

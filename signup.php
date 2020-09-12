@@ -1,11 +1,13 @@
 <?php 
+    if(!isset($_SESSION)){
+        session_start();
+    }
+    
     include_once './includes/header.php';
     $activePage='sign up';
     $darkNav=true;
     include_once './includes/navigation.php';
-    if(!isset($_SESSION)){
-        session_start();
-    }
+    
     var_dump($_SESSION['signup-errors']);
 ?>
 
