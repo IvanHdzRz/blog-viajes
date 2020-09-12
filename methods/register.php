@@ -15,7 +15,9 @@
     include '../helpers/ValidateNewUserData.php';
     include '../helpers/DBConector.php';
 
-    session_start();
+    if(!isset($_SESSION)){
+        session_start();
+    }
     //validar que lleguen datos atravez de POST
     $isEmpty=!(validateEmptyData($_POST));
     //si esta vacio redirigir a pagina de registro
@@ -56,8 +58,12 @@
         
         $sucessInsertUser=insertNewUser($connection,$newUserData);
         
+        //si se pudo crear el nuevo usuario redirigir a pagina de exito y 
+        //cambiar su log  status a login
         if($sucessInsertUser){
             echo 'usuario insertado';
+            $_SESSION['login-status']='authenticated';
+
         }else{
             echo 'no se pudo joven';
         }

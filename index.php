@@ -4,7 +4,9 @@
         $activePage='home';
         require_once './includes/navigation.php';
         require_once './includes/hero.php';
-        session_start();
+        if(!isset($_SESSION)){
+            session_start();
+        }
     ?>
     <main>
         <div class="lastest-post">

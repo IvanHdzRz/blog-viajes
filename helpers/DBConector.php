@@ -1,5 +1,7 @@
 <?php 
-    session_start();
+    if(!isset($_SESSION)){
+        session_start();
+    }
     /*database info*/
     $db_url='localhost';
     $db_user='root';

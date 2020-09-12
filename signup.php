@@ -3,7 +3,9 @@
     $activePage='sign up';
     $darkNav=true;
     include_once './includes/navigation.php';
-    session_start();
+    if(!isset($_SESSION)){
+        session_start();
+    }
     var_dump($_SESSION['signup-errors']);
 ?>
 
