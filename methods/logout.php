@@ -1,0 +1,10 @@
+<?php
+    if(!isset($_SESSION)){
+        session_start();
+    }
+    if($_SESSION['login-status']==='authenticated'){
+        session_unset();
+        session_destroy();
+        header("Location:../index.php");
+    }
+?>

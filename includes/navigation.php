@@ -1,4 +1,8 @@
 <?php  
+    if(!isset($_SESSION)){
+        session_start();
+    }
+    
    $sections= Array(
         ["name" => "home", 'link'=>'index.php' ],
         ['name'=>'about us', 'link'=>'index.php' ],
@@ -9,7 +13,10 @@
     
     if(isset($_SESSION['login-status'])){
         if($_SESSION['login-status']==='authenticated'){
-            array_push($sections,['name'=>'logout','link'=>'checkSession.php']);
+            array_push($sections,['name'=>'logout','link'=>'./methods/logout.php']);
+        }else{
+            array_push($sections,['name'=>'login','link'=>'login.php']);
+            array_push($sections,['name'=>'signup','link'=>'signup.php']);    
         }
     }else{ //si no esta logeado muestra opciones para inicio de sesion y registro
         array_push($sections,['name'=>'login','link'=>'login.php']);

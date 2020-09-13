@@ -3,6 +3,10 @@
         if(!isset($_SESSION)){
             session_start();
         }
+        if(!isset($_SESSION['login-status'])){
+            $_SESSION['login-status']='anonymous';
+            
+        }
         require_once './includes/header.php';
         $activePage='home';
         require_once './includes/navigation.php';
